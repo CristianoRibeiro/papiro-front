@@ -60,54 +60,6 @@ return (
 </Collapse>
 </SideMenu>
 
-  /* <SideMenu vertical navbar='true'>
-  <NavItem> 
-  <Button href='#'><b>Avisos</b></Button>
-    </NavItem>
-  
-  <NavItem>
-  <Button href='#' size='sm'><b>Recompensas</b></Button>
-    </NavItem>
-
-    <NavItem>
-  <Button  onClick={toggle} ><b>Cadastrar</b></Button>
-    </NavItem>
-
-   
-    <NavItem>
-      <Button href='#'><b>Avisos</b></Button>
-    </NavItem>
-
-    <NavItem>
-    <Button  onClick={toggle2}><b>Prêmios</b></Button>
-    </NavItem>
-
-    <Collapse isOpen={isOpen && isOpen2}>
-    <NavItem>
-   <Button href='#'><b>Conquistas</b></Button>
-    </NavItem>
-    <NavItem>
-   <Button href='#'><b>Recompensas</b></Button>
-    </NavItem>
-
-    </Collapse>
-
-    <NavItem>
-    <Button  onClick={toggle3}><b>Estruturas</b></Button>
-    </NavItem>
-
-    <NavItem>
-    <Button href='#'><b>Cargo</b></Button>
-    </NavItem>
-    <NavItem>
-   <Button href='#'><b>Setor</b></Button>
-    </NavItem>
-
-    </Collapse>
-    </Collapse>
-
-</SideMenu>
- */
 
 );
 }
