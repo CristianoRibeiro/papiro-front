@@ -4,6 +4,9 @@ import {SideMenu} from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNewspaper,faAward,faPlusCircle,faTrophy,faUsers,faAddressCard,faUsersCog,faStar,faScroll} from '@fortawesome/free-solid-svg-icons'
 
+import {Link}  from 'react-router-dom';
+
+
 function SideNav(){
 
   const [collapsed, setCollapsed] = useState(true);
@@ -31,8 +34,8 @@ return (
   <div class="card">
     <div class="body">
       <ul>
-        <li > <FontAwesomeIcon icon={faNewspaper} /> Avisos</li>
-        <li><FontAwesomeIcon icon={faAward}/> Recompensas</li>
+      <Link to="/Avisos/"><li > <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
+      <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
         <li onClick={toggle}><FontAwesomeIcon icon={faPlusCircle}/> Cadastrar</li>
         <Collapse isOpen={isOpen}>
         
@@ -59,7 +62,6 @@ return (
 </div>
 </Collapse>
 </SideMenu>
-
 
 );
 }

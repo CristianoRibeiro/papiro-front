@@ -1,28 +1,22 @@
 import React from 'react';
-
 import { Container, Row, Col } from 'reactstrap';
-import SideNav from './../../components/SideNav';
-import Categories from './../../components/Categories';
-
-
 import Api from '../../services/api';
 
-function Main() {
+function Setor() {
   return(
     <Container>
       <Row>
         <Col xs="4">
-        <SideNav/>
         </Col>
         <Col xs="5">
-        
+        <h1>Teste</h1>
         </Col>
         <Col xs="3">
-        <Categories/>
+        
         </Col>
       </Row>
     </Container>
   );
 }
 
-export default Main;
+export default Setor;
