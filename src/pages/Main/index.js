@@ -15,7 +15,7 @@ function Main() {
         <SideNav/>
         </Col>
         <Col xs="5">
-        
+          
         </Col>
         <Col xs="3">
         <Categories/>

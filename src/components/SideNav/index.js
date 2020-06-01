@@ -30,28 +30,28 @@ return (
 <SideMenu navbar='true'>
 <NavbarToggler onClick={toggleNavbar}><FontAwesomeIcon icon={faScroll}/></NavbarToggler>
 <Collapse isOpen={!collapsed} navbar>
-<div class="container">
-  <div class="card">
-    <div class="body">
+<div className="container">
+  <div className="card">
+    <div className="body">
       <ul>
       <Link to="/Avisos/"><li > <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
       <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
         <li onClick={toggle}><FontAwesomeIcon icon={faPlusCircle}/> Cadastrar</li>
         <Collapse isOpen={isOpen}>
         
-        <li class='li2'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li>
-        <li class='li2 'onClick={toggle2}><FontAwesomeIcon icon={faTrophy}/> Prêmios</li>
+        <li className='li2'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li>
+        <li className='li2 'onClick={toggle2}><FontAwesomeIcon icon={faTrophy}/> Prêmios</li>
         <Collapse isOpen={isOpen && isOpen2}>
-        <li class='li3'><FontAwesomeIcon icon={faStar}/> Conquistas</li>
-        <li class='li3'><FontAwesomeIcon icon={faAward}/> Recompensas</li>
+        <li className='li3'><FontAwesomeIcon icon={faStar}/> Conquistas</li>
+        <li className='li3'><FontAwesomeIcon icon={faAward}/> Recompensas</li>
         </Collapse>
 
-        <li class='li2'onClick={toggle3}><FontAwesomeIcon icon={faUsers}/> Equipes</li>
+        <li className='li2'onClick={toggle3}><FontAwesomeIcon icon={faUsers}/> Equipes</li>
 
         <Collapse isOpen={isOpen && isOpen3}>
      
-        <li class='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargo</li>
-        <li class='li3'><FontAwesomeIcon icon={faUsersCog}/> Setor</li>
+        <li className='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargo</li>
+        <li className='li3'><FontAwesomeIcon icon={faUsersCog}/> Setor</li>
      
         </Collapse>
         </Collapse>
