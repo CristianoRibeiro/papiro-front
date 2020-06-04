@@ -11,17 +11,29 @@ import Api from '../../services/api';
 
 function Main() {
   return(
-    <Container>
-      <Row>
-        <Col xs="2">
-        <UserPane/>
-        <SideNav/>
-        </Col>
-        <Col xs="6">
-          
-        </Col>
-        <Col xs="3">
-        <AvisosPartial/>
+
+<Col xs="12">
+<Row>
+<Col xs="2">
+<Container>
+<UserPane/>
+    <SideNav/>
+    </Container>
+  </Col>
+
+  <Col xs="7">
+<Container>
+
+
+    </Container>
+  </Col>
+
+
+  
+  <Col xs="3">
+<Container>
+
+<AvisosPartial/>
         <br></br>
         <br></br>
         <RecompensasPartial/>
@@ -30,9 +42,13 @@ function Main() {
 
         <TopTopics/>
 
-        </Col>
-      </Row>
+
     </Container>
+  </Col>
+  </Row>
+</Col>
+
+  
   );
 }
 
