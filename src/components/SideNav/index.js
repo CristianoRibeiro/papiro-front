@@ -3,7 +3,6 @@ import { Collapse,NavbarToggler} from 'reactstrap';
 import {SideMenu} from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNewspaper,faAward,faPlusCircle,faTrophy,faUsers,faAddressCard,faUsersCog,faStar,faScroll} from '@fortawesome/free-solid-svg-icons'
-import UserPane from '../UserPane';
 
 
 import {Link}  from 'react-router-dom';

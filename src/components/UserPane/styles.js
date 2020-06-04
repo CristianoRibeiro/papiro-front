@@ -14,5 +14,11 @@ export const Pane=styled.div`
     padding:15px;
 
   }
+
+  h3{
+    margin-top: 85px;
+    font-size:20px;
+    padding:5px;
+  }
   
 `

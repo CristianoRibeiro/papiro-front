@@ -7,7 +7,8 @@ import Api from '../../services/api';
 
 class UserPane extends Component{
     state={
-        user:""
+        user:"",
+        pontuacao:""
     };
 
     async componentDidMount(){
@@ -40,7 +41,9 @@ return (
       </Col>
       <Col xs="8">
       <div className="userName">
-        <h3>{user}</h3>
+      
+      <h3>{user}    Pontuação:45 </h3>
+
         </div>
       </Col>
  
@@ -48,7 +51,7 @@ return (
   </Container>
   </div>
 </Pane>
-   
+
 );
 
     
