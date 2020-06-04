@@ -6,8 +6,8 @@ export const SideMenu=styled.nav`
 }
 
 .card{  
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 320px;
   background-color: #708090;
   border-radius: 10px 10px;
 }

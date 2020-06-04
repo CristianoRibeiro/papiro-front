@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Container, Row, Col } from 'reactstrap';
 import SideNav from './../../components/SideNav';
+import UserPane from './../../components/UserPane';
 import Categories from './../../components/Categories';
 
 
@@ -12,6 +13,7 @@ function Main() {
     <Container>
       <Row>
         <Col xs="4">
+        <UserPane/>
         <SideNav/>
         </Col>
         <Col xs="5">
