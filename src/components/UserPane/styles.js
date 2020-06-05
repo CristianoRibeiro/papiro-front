@@ -20,5 +20,5 @@ export const Pane=styled.div`
     font-size:13px;
     padding:5px;
   }
-  
+
 `

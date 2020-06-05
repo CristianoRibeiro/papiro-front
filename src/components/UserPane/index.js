@@ -13,17 +13,17 @@ class UserPane extends Component{
     };
 
     async componentDidMount(){
-    
+
         const Id='1';
         const response=await Api.get("User/Username/Id");
 
         this.setState({
-        
+
         user:response.data
-        
-        
+
+
         })
-        
+
         console.log(this.state.user);
         };
 
@@ -42,12 +42,12 @@ return (
       </Col>
       <Col xs="8">
       <div className="userName">
-      
+
       <h3>{user}    Pontuação:45 </h3>
 
         </div>
       </Col>
- 
+
     </Row>
     <Row>
         <SideNav></SideNav>
@@ -58,7 +58,7 @@ return (
 
 );
 
-    
+
 }
 }
 
