@@ -37,7 +37,7 @@ class RecompensasPartial extends Component{
   
          {recompensas.map(recompensas => (
     <li key={recompensas.IdRecompensa}>
-          {recompensas.DsRecompensa}
+          {recompensas.DsRecompensa}  --- {recompensas.ValorPontuacao} pts.
      
   </li>
   ))}

@@ -40,19 +40,19 @@ return (
         <li onClick={toggle}><FontAwesomeIcon icon={faPlusCircle}/> Cadastrar</li>
         <Collapse isOpen={isOpen}>
         
-        <li className='li2'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li>
+         <Link to="/Cadastrar/Avisos/"><li className='li2'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
         <li className='li2 'onClick={toggle2}><FontAwesomeIcon icon={faTrophy}/> Prêmios</li>
         <Collapse isOpen={isOpen && isOpen2}>
-        <li className='li3'><FontAwesomeIcon icon={faStar}/> Conquistas</li>
-        <li className='li3'><FontAwesomeIcon icon={faAward}/> Recompensas</li>
+        <Link to="/Cadastrar/Conquistas/"><li className='li3'><FontAwesomeIcon icon={faStar}/> Conquistas</li></Link>
+        <Link to="/Cadastrar/Recompensas/"> <li className='li3'><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
         </Collapse>
 
         <li className='li2'onClick={toggle3}><FontAwesomeIcon icon={faUsers}/> Equipes</li>
 
         <Collapse isOpen={isOpen && isOpen3}>
      
-        <li className='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargo</li>
-        <li className='li3'><FontAwesomeIcon icon={faUsersCog}/> Setor</li>
+        <Link to="/Cadastrar/Cargo/"><li className='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargo</li></Link>
+        <Link to="/Cadastrar/Setor/"><li className='li3'><FontAwesomeIcon icon={faUsersCog}/> Setor</li></Link>
      
         </Collapse>
         </Collapse>

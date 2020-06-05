@@ -6,9 +6,9 @@ export const SideMenu=styled.nav`
 }
 
 .card{  
-  width: 350px;
-  height: 320px;
-  background-color: #708090;
+  width: 200px;
+  height: 140px;
+  background-color:#483D8B;
   border-radius: 10px 10px;
 }
 
@@ -46,7 +46,7 @@ h3{
 .body li{
   transition: 1s all;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   padding: 15px;
   margin-left: 0px;
   margin-top: 0px;
@@ -88,6 +88,10 @@ li:hover{
   position: absolute;
   border-top-right-radius: 15px 15px;
   border-bottom-right-radius: 15px 15px;
+}
+
+.body ul :Link{
+  text-decoration:none; 
 }
 
 .body li:hover > ul{

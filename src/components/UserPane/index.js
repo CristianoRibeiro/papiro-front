@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import {Pane}  from './styles';
 import {Link}  from 'react-router-dom';
+import SideNav from './../../components/SideNav';
 
 import Api from '../../services/api';
 
@@ -48,6 +49,9 @@ return (
       </Col>
  
     </Row>
+    <Row>
+        <SideNav></SideNav>
+        </Row>
   </Container>
   </div>
 </Pane>

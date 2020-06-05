@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import Api from '../../services/api';
+
 
 function Cargos() {
   return(

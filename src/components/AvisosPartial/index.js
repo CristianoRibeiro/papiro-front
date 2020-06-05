@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 import Api from '../../services/api';
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button,
-  ListGroup, ListGroupItem, Badge,
-  CardHeader
+  Card,
+  CardHeader,CardBody
 } from 'reactstrap';
+
+import {Tittle}  from './styles';
 
 class AvisosPartial extends Component{
   state={
@@ -21,7 +21,7 @@ class AvisosPartial extends Component{
     
     avisos:response.data
     
-    })
+    })  
     
     };
     
@@ -29,13 +29,13 @@ class AvisosPartial extends Component{
       const{ avisos}=this.state;
       return(<div>
         <Card>
-        <CardHeader>Avisos</CardHeader>
+        <CardHeader>   <Tittle> Avisos</Tittle></CardHeader>
   
          <CardBody>
 
          {avisos.map(avisos => (
     <li key={avisos.IdAviso}>
-          {avisos.Aviso}
+          {avisos.TituloAviso}
      
   </li>
 ))}

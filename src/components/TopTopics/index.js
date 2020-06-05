@@ -35,7 +35,7 @@ class TopTopics extends Component{
 
          {topmensagens.map(topmensagens => (
     <li key={topmensagens.IdMensagem}>
-          {topmensagens.DsMensagem}
+          {topmensagens.TituloMensagem}
      
   </li>
 ))}

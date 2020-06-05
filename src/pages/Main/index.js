@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Container, Row, Col } from 'reactstrap';
-import SideNav from './../../components/SideNav';
 import UserPane from './../../components/UserPane';
 import AvisosPartial from './../../components/AvisosPartial';
 import RecompensasPartial from './../../components/RecompensasPartial';
@@ -17,7 +16,6 @@ function Main() {
 <Col xs="2">
 <Container>
 <UserPane/>
-    <SideNav/>
     </Container>
   </Col>
 
