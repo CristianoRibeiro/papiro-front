@@ -1,20 +1,46 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col,Jumbotron, } from 'reactstrap';
+import {Base} from './style' ;
+import {CadastroConquistas} from '.../components/CadastrarConquistas'
+
 
 function Conquistas() {
   return(
-    <Container>
-      <Row>
-        <Col xs="4">
-        </Col>
-        <Col xs="5">
-        <h1>Teste</h1>
-        </Col>
-        <Col xs="3">
-        
-        </Col>
-      </Row>
+
+ <Base>
+
+<Col xs="12" >
+<h1>Teste</h1>
+<Row>
+
+<Col xs="2">
+<Container>
+
+
     </Container>
+  </Col>
+
+  <Col xs="7">
+<Container>
+
+
+    </Container>
+  </Col>
+
+
+  
+  <Col xs="3">
+<Container>
+
+
+    </Container>
+  </Col>
+
+  </Row>
+ 
+</Col>
+
+</Base>
   );
 }
 
