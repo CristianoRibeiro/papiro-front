@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container, Row, Col,Jumbotron, } from 'reactstrap';
 import {Base} from './style' ;
-import CadastroConquista from '../../../components/CadastroConquista';
+import CadastroConquista from '../../../components/Conquistas/CadastroConquista'
+import ConsultarConquistas from '../../../components/Conquistas/ConsultarConquistas'
+
+
 
 function Conquistas() {
   return(
@@ -10,16 +13,23 @@ function Conquistas() {
 
 <Col xs="12" >
 <Row>
-<Col xs="12">
 <Container>
 <CadastroConquista>
 </CadastroConquista>
 
     </Container>
-  </Col>
+
 
   
   </Row>
+
+  <Row>
+<Container>
+
+<ConsultarConquistas></ConsultarConquistas>
+
+</Container>
+</Row>
  
 </Col>
 

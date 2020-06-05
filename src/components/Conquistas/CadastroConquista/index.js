@@ -5,11 +5,7 @@ import {
 
 
 class CadastroConquista extends Component{
-  state={
-    valuerange:{min:1,max:30}
-
-  };
-
+ 
 
  async componentDidMount(){}
     
