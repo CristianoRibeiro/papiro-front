@@ -5,14 +5,35 @@ export const Container = styled.div`
     border-radius: 2px;
     box-shadow: 0 1px 2px #c9cccd;
     margin-bottom: 20px;
-    display: flex;
+    display: block;
+
+    .clearfix:before {
+      content: " ";
+      display: table;
+    }
 `;
 export const ContentLeft = styled.div`
-
   float: left!important;
   width: 85%;
   box-sizing: border-box;
   display: flex;
+
+  .clearfix:before {
+      content: " ";
+      display: table;
+    }
+`;
+
+export const ContentLeftAll = styled.div`
+  float: left!important;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+
+  .clearfix:before {
+      content: " ";
+      display: table;
+    }
 `;
 
 
@@ -33,6 +54,7 @@ export const Avatar = styled.div`
 
 
 export const Posttext = styled.div`
+    display: block;
     width: 100%;
     padding-right: 30px;
     padding-top: 20px;
@@ -53,18 +75,33 @@ export const Posttext = styled.div`
     p {
       margin: 0 0 10px;
     }
+
+   blockquote {
+        border: solid 1px #f1f1f1;
+        border-radius: 2px;
+        font-size: 14px;
+        padding: 18px;
+
+        .original, .postreply {
+            font-size: 12px;
+            color: #bdc3c7;
+            display: block;
+            font-family: 'Open Sans Regular', sans-serif;
+        }
+    }
+
+
 `;
 
 
-export const Clearfix = styled.div`
-content: " ";
-    display: flex;
-`;
+
 
 
 export const Postinfo = styled.div`
 width: 15%;
     border-left: solid 1px #f1f1f1;
+    display: flex;
+    flex-direction: column;
 `;
 
 
@@ -72,6 +109,7 @@ export const Comments = styled.div`
     border-bottom: solid 1px #f1f1f1;
     padding: 18px 0 25px 0;
     text-align: center;
+
 `;
 
 
@@ -118,4 +156,91 @@ export const Time = styled.div`
     text-align: center;
     line-height: 29px;
 `;
+
+export const Postinfobot = styled.div`
+    border-top: solid 1px #f1f1f1;
+    line-height: 50px;
+    padding: 0 30px 0 94px;
+    color:#999;
+
+    .pull-left {
+      float: left;
+    }
+
+    .likeblock {
+       width: 15%;
+    }
+    .up {
+      color: #1abc9c;
+      font-size: 12px;
+    }
+    .down {
+        color: #db7a7a;
+        font-size: 12px;
+        margin-left: 20px;
+    }
+    .prev {
+        width: 10%;
+        margin-left: 20px;
+    }
+    .posted {
+        width: 50%;
+        margin-left: 18px;
+        font-size: 12px;
+        color: #999;
+        font-family: 'Open Sans Regular', sans-serif;
+    }
+    .next {
+        width: 10%;
+        text-align: right;
+    }
+    .pull-right {
+      float: right!important;
+  }
+`;
+
+export const Form = styled.form`
+    display: block;
+    margin-top: 0em;
+    .topwrap{
+      display: flex;
+    }
+`;
+
+export const PosttextComent = styled.div`
+    display: block;
+    width: 80%;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: #989c9e;
+    font-size: 14px;
+    font-family: 'Open Sans Light', sans-serif;
+    line-height: 25px;
+
+    .postreply {
+      font-size: 12px;
+      color: #bdc3c7;
+      display: block;
+      font-family: 'Open Sans Regular', sans-serif;
+  }
+  .textwraper {
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    padding: 18px;
+    textarea {
+    border: none;
+    box-shadow: none;
+    background-color: #f1f1f1;
+    /* width: 610px; */
+    width: 100%;
+}
+
+}
+
+
+
+
+`;
+
 

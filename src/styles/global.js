@@ -26,6 +26,14 @@ export default createGlobalStyle`
     margin: 0 auto;
     /* padding: 0 20px 50px; */
   }
+
+  a {
+    color: #363838;
+  }
+
+  a:hover {
+    color: #989c9e;
+  }
   button {
     cursor: pointer;
   }

@@ -23,6 +23,7 @@ function Main() {
 
         <Col xs="6">
         <Post />
+
         </Col>
         <Col xs="3">
         <AvisosPartial/>

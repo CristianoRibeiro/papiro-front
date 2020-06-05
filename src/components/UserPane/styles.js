@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Pane=styled.div`
 
-.card{  
+.card{
     width: 400px;
     height: 150px;
     background-color:#E9967A;
@@ -20,5 +20,5 @@ export const Pane=styled.div`
     font-size:20px;
     padding:5px;
   }
-  
+
 `
