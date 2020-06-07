@@ -5,6 +5,7 @@ import {Link}  from 'react-router-dom';
 import SideNav from './../../components/SideNav';
 
 import Api from '../../services/api';
+import avatar from './../../images/user.png';
 
 class UserPane extends Component{
     state={
@@ -38,7 +39,7 @@ return (
     <Container>
     <Row>
       <Col xs="4">
-      <img scr="teste-de-liderança.png"/>
+      <img src={avatar} alt="" />
       </Col>
       <Col xs="8">
       <div className="userName">

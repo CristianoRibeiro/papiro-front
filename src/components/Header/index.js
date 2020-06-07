@@ -6,7 +6,7 @@ import {
   NavbarBrand,
   NavItem
 } from 'reactstrap';
-// import { Container } from './styles';
+import { Content } from './styles';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +15,21 @@ function Header() {
   return (
     <div>
       <Navbar color="danger" className="mr-auto" dark expand="md" className="mb-4">
+
+        <Content>
+
         <NavbarBrand href="/">PAPIRO</NavbarBrand>
-        <FontAwesomeIcon icon={faSignOutAlt} href='#'  /> 
+        <div>
+          <a href="#">
+            Sair &nbsp;&nbsp;&nbsp;
+            <FontAwesomeIcon icon={faSignOutAlt} href='#'  />
+          </a>
+        </div>
+
+
+        </Content>
+
+
       </Navbar>
     </div>
   );

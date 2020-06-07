@@ -5,7 +5,7 @@ import {
   CardHeader,CardBody
 } from 'reactstrap';
 
-import {Tittle}  from './styles';
+import {SidebarBlock}  from './styles';
 
 class AvisosPartial extends Component{
   state={
@@ -16,36 +16,35 @@ class AvisosPartial extends Component{
  async componentDidMount(){
 
     const response=await Api.get('Aviso/ObterAvisosAtivos');
-    
+
     this.setState({
-    
+
     avisos:response.data
-    
-    })  
-    
+
+    })
+
     };
-    
+
     render(){
       const{ avisos}=this.state;
-      return(<div>
-        <Card>
-        <CardHeader>   <Tittle> Avisos</Tittle></CardHeader>
-  
-         <CardBody>
+      return(
+      <SidebarBlock>
+        <h3> Avisos</h3>
+        <div class="divline"></div>
 
-         {avisos.map(avisos => (
-    <li key={avisos.IdAviso}>
-          {avisos.TituloAviso}
-     
-  </li>
-))}
+        <div class="blocktxt">
+          <ul>
+          {avisos.map(avisos => (
+              <li key={avisos.IdAviso}>
+                    {avisos.TituloAviso}
 
-         </CardBody>
-       </Card>
-     </div>
+            </li>
+          ))}
+          </ul>
+        </div>
+     </SidebarBlock>
 
-      )}     
+      )}
     }
 
     export default AvisosPartial;
-  

@@ -9,27 +9,27 @@ import {Tittle}  from './styles';
 
 class CadastroConquista extends Component{
   state={
-    
+
   };
 
 
  async componentDidMount(){
 
-    
+
     };
-    
+
     render(){
       const{ avisos}=this.state;
       return(<div>
         <Card>
         <CardHeader>   <Tittle> Avisos</Tittle></CardHeader>
-  
+
          <CardBody>
 
          {avisos.map(avisos => (
     <li key={avisos.IdAviso}>
           {avisos.TituloAviso}
-     
+
   </li>
 ))}
 
@@ -37,8 +37,7 @@ class CadastroConquista extends Component{
        </Card>
      </div>
 
-      )}     
+      )}
     }
 
     export default CadastroConquista;
-  

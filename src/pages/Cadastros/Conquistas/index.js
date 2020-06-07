@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col,Jumbotron, } from 'reactstrap';
 import {Base} from './style' ;
-import {CadastroConquistas} from '.../components/CadastrarConquistas'
+import {CadastroConquistas} from './../../../components/CadastrarConquista'
 
 
 function Conquistas() {
@@ -28,7 +28,7 @@ function Conquistas() {
   </Col>
 
 
-  
+
   <Col xs="3">
 <Container>
 
@@ -37,7 +37,7 @@ function Conquistas() {
   </Col>
 
   </Row>
- 
+
 </Col>
 
 </Base>

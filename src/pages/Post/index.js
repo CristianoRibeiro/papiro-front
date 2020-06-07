@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Button,
 } from 'reactstrap';
+
+import Api from './../../services/api';
+
 import {
   faEye,
   faClock,
@@ -11,7 +14,9 @@ import {
   faReply,
   faShare,
   faFlag
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
+
+
 import {
   Container,
   ContentLeft,
@@ -30,11 +35,11 @@ import {
   Form,
 } from './styles';
 
-import avatar from './../../images/images.jpeg';
+import avatar from './../../images/user.png';
 
 class Post extends Component {
   state = {
-    on: false
+    on: false,
   }
 
   toogle = () => {
@@ -43,8 +48,14 @@ class Post extends Component {
     });
   }
   render () {
+
+      const { mensagem } = this.props;
       return (
         <div>
+
+        {mensagem.map(mensagem => (
+
+
         <Container>
           {!this.state.on ? (
               <ContentLeft>
@@ -56,8 +67,8 @@ class Post extends Component {
 
                 </Userinfo>
                 <Posttext>
-                    <h2><a href="#">10 Kids Unaware of Their Halloween Costume</a></h2>
-                    <p>It's one thing to subject yourself to a Halloween costume mishap because, hey, that's your prerogative.</p>
+                  <h2><a href="#">{mensagem.TituloMensagem}</a></h2>
+                  <p>{mensagem.DsMensagem.slice(0,150)+'...'}</p>
                 </Posttext>
                 <div className="clearfix"></div>
             </ContentLeft>
@@ -129,7 +140,7 @@ class Post extends Component {
             </Postinfobot>
           )}
       </Container>
-
+      ))}
       <div>
       { this.state.on && (
         <div>

@@ -1,10 +1,7 @@
 import React,{Component}from 'react';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button,
-  ListGroup, ListGroupItem, Badge,
-  CardHeader
-} from 'reactstrap';
+
+
+import {SidebarBlock}  from './styles';
 
 import Api from '../../services/api';
 
@@ -17,37 +14,42 @@ class RecompensasPartial extends Component{
  async componentDidMount(){
 
     const response=await Api.get('Recompensa/ObterTop3Recompensas');
-    
+
     this.setState({
-    
+
     recompensas:response.data
-    
+
     })
-    
+
     };
-    
+
     render(){
       const{ recompensas}=this.state;
 
-      return(<div>
-        <Card>
-        <CardHeader>Recompensas</CardHeader>
-  
-         <CardBody>
-  
-         {recompensas.map(recompensas => (
-    <li key={recompensas.IdRecompensa}>
-          {recompensas.DsRecompensa}  --- {recompensas.ValorPontuacao} pts.
-     
-  </li>
-  ))}
-  
-         </CardBody>
-       </Card>
-     </div>
-  
-      )}     
-    } 
-   
+      return(
+
+        <SidebarBlock>
+            <h3> Recompensas</h3>
+            <div class="divline"></div>
+
+            <div class="blocktxt">
+              <ul>
+              {recompensas.map(recompensas => (
+                  <li key={recompensas.IdRecompensa}>
+                        {recompensas.DsRecompensa}  --- {recompensas.ValorPontuacao} pts.
+
+                </li>
+              ))}
+              </ul>
+            </div>
+        </SidebarBlock>
+
+
+
+      )
+    }
+
+}
+
 
   export default RecompensasPartial;

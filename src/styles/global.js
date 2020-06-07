@@ -13,12 +13,13 @@ export default createGlobalStyle`
   }
 
   body {
-    background: '#ecf0f1';
+    background: #f1f1f1;
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button {
     font: 14px Roboto, sans-serif;
+
   }
 
   #root {
