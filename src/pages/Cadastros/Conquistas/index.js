@@ -1,46 +1,35 @@
 import React from 'react';
 import { Container, Row, Col,Jumbotron, } from 'reactstrap';
 import {Base} from './style' ;
+<<<<<<< HEAD
 import {CadastroConquistas} from './../../../components/CadastrarConquista'
+=======
+import CadastroConquista from '../../../components/Conquistas/CadastroConquista'
+import ConsultarConquistas from '../../../components/Conquistas/ConsultarConquistas'
+
+>>>>>>> 38f7685ebb8718e5ab1d0791d1013fef1737c6c4
 
 
 function Conquistas() {
   return(
 
- <Base>
+
 
 <Col xs="12" >
-<h1>Teste</h1>
 <Row>
+<Container>
+<CadastroConquista>
+</CadastroConquista>
 
-<Col xs="2">
+  </Container>
+
 <Container>
 
+<ConsultarConquistas></ConsultarConquistas>
 
-    </Container>
-  </Col>
-
-  <Col xs="7">
-<Container>
-
-
-    </Container>
-  </Col>
-
-
-
-  <Col xs="3">
-<Container>
-
-
-    </Container>
-  </Col>
-
-  </Row>
-
+</Container>
+</Row>
 </Col>
-
-</Base>
   );
 }
 
