@@ -37,6 +37,9 @@ return (
       <ul>
       <Link to="/Avisos/"><li > <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
       <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
+      <Link to="/Conquistas/ListarConquistas/"><li><FontAwesomeIcon icon={faStar}/> Conquistas</li></Link>
+      <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Cargos</li></Link>
+       <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAddressCard}/> Setores</li></Link>
         <li onClick={toggle}><FontAwesomeIcon icon={faPlusCircle}/> Cadastrar</li>
         <Collapse isOpen={isOpen}>
         

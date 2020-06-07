@@ -20,11 +20,6 @@ function Conquistas() {
 
   </Container>
 
-<Container>
-
-<ConsultarConquistas></ConsultarConquistas>
-
-</Container>
 </Row>
 </Col>
   );

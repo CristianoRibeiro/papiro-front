@@ -7,7 +7,7 @@ export const SideMenu=styled.nav`
 
 .card{  
   width: 200px;
-  height: 140px;
+  height: 300px;
   background-color:#483D8B;
   border-radius: 10px 10px;
 }
