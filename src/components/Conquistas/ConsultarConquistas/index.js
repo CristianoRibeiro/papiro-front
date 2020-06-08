@@ -65,7 +65,6 @@ const response= fetch(`http://localhost:3100/Conquista/ConsultarConquistaPorFilt
 }).then(response=>response.json())
 .then(data => console.log(data) )
 
-
                              
     }
 

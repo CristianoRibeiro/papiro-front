@@ -35,38 +35,25 @@ return (
   <div className="card">
     <div className="body">
       <ul>
-      <Link to="/Avisos/"><li > <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
-      <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
+      <Link to="/Avisos/ListarAvisos/"><li > <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link> 
+      <Link to="Recompensas/ListarRecompensas"><li><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
       <Link to="/Conquistas/ListarConquistas/"><li><FontAwesomeIcon icon={faStar}/> Conquistas</li></Link>
       <li className='liadmin' onClick={toggle}><FontAwesomeIcon icon={faChalkboardTeacher}/> Gestão</li>
         <Collapse isOpen={isOpen}>
-  
-        {/* <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Cargos</li></Link>
-       <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAddressCard}/> Setores</li></Link>
-         <Link to="/Cadastrar/Avisos/"><li className='li2'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
-        <li className='li2 'onClick={toggle}><FontAwesomeIcon icon={faTrophy}/> Prêmios</li> */}
-        
-   
-     
-        <Link to="/Cadastrar/Cargo/"><li className='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargos</li></Link>
-        <Link to="/Cadastrar/Setor/"><li className='li3'><FontAwesomeIcon icon={faUsersCog}/> Setores</li></Link>
-        <Link to="/Cadastrar/Setor/"><li className='li3'><FontAwesomeIcon icon={faChartBar}/> Relatórios</li></Link>
+
+        <Link to="/Gestão/Cargos/"><li className='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargos</li></Link>
+        <Link to="/Gestão/Setores/"><li className='li3'><FontAwesomeIcon icon={faUsersCog}/> Setores</li></Link>
+        <Link to="/Gestão/Relatórios/"><li className='li3'><FontAwesomeIcon icon={faChartBar}/> Relatórios</li></Link>
         <li className='li2'onClick={toggle2}><FontAwesomeIcon icon={faPlusCircle}/> Cadastrar</li>
 
         </Collapse>
        
         <Collapse isOpen={isOpen && isOpen2}>
-        <Link to="/Avisos/"><li className='li3'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
-        <Link to="/Cadastrar/Conquistas/"><li className='li3'><FontAwesomeIcon icon={faStar}/> Conquistas</li></Link>
-        <Link to="/Cadastrar/Recompensas/"> <li className='li3'><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
+        <Link to="/Avisos/Cadastrar"><li className='li3'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
+        <Link to="/Conquistas/Cadastrar"><li className='li3'><FontAwesomeIcon icon={faStar}/> Conquistas</li></Link>
+        <Link to="/Recompensas/Cadastrar/"> <li className='li3'><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
         </Collapse>
-        
 
-        {/* <li className='li2'onClick={toggle3}><FontAwesomeIcon icon={faUsers}/> Equipes</li>
-
-        <Collapse isOpen={isOpen && isOpen3}>
-        </Collapse>
-             */}
       </ul>
     </div>
   </div>

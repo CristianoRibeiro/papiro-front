@@ -1,8 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-
-function Cargos() {
+function Recompensas() {
   return(
     <Container>
       <Row>
@@ -19,4 +18,4 @@ function Cargos() {
   );
 }
 
-export default Cargos;
+export default Recompensas;

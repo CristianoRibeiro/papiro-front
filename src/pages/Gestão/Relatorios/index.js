@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-function Setor() {
+function Recompensas() {
   return(
     <Container>
       <Row>
@@ -18,4 +18,4 @@ function Setor() {
   );
 }
 
-export default Setor;
+export default Recompensas;
