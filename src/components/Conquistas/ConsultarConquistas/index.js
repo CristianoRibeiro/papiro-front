@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {
   Jumbotron,Form,FormGroup,Label,Input,Button,Row,Col
 } from 'reactstrap';
+import $ from 'jquery';
+
 import Api from '../../../services/api';
 
 class ConsultarConquistas extends Component{
@@ -13,7 +15,8 @@ constructor(props) {
     ValorConquista:'',
     STATUS:"Ativo",
     DataInício:'',
-    DataFim:''  
+    DataFim:'' ,
+    resultado:[]
   
   
   };
@@ -27,9 +30,6 @@ this.handleChangeDTFinal=this.handleChangeDTFinal.bind(this);
 
 
 }
-  state={
-    resultado:[]
-};
 
 handleChangeNomeConquista(event) {
   this.setState({NomeConquista: event.target.value});
@@ -47,18 +47,25 @@ handleChangeDTFinal(event) {
   this.setState({DataFim: event.target.value});
 }
 
-// this.setState(prevState => {
-//   let filtro ={...prevState.filtro};  // creating copy of state variable jasper
-//   filtro.NomeConquista = document.getElementById('NoConquistaFiltro').value;     
-//   filtro.ValorConquista=document.getElementById('VlConquista').value;  
-//   filtro.STATUS=document.getElementById('select-IsAtivo').value; 
-//   filtro.DataInício=document.getElementById('DataInício').value; 
-//   filtro.DataFim=document.getElementById('DataFim').value; 
-
-
   async handleSubmit(event) {
-    alert('Assim que eu estou chegando aqui ' +this.state.NomeConquista+','+this.state.ValorConquista+','+this.state.STATUS+','+this.state.DataInício+','+this.state.DataFim);
     event.preventDefault();
+    
+const response= fetch(`http://localhost:3100/Conquista/ConsultarConquistaPorFiltro/`, {
+  method: 'POST',
+  body:  JSON.stringify({
+    NoConquista:this.state.NomeConquista,
+    ValorConquista:this.state.ValorConquista,
+    DataInício:this.state.DataInício,
+    DataFim:this.state.DataFim,
+    STATUS:this.state.STATUS
+  }),
+  headers: {
+      'content-type': 'application/json'
+  }
+}).then(response=>response.json())
+.then(data => console.log(data) )
+
+
                              
     }
 

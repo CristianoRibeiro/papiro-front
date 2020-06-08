@@ -6,8 +6,8 @@ export const SideMenu=styled.nav`
 }
 
 .card{  
-  width: 200px;
-  height: 300px;
+  width: 150px;
+  height: 200px;
   background-color:#483D8B;
   border-radius: 10px 10px;
 }
@@ -18,8 +18,11 @@ export const SideMenu=styled.nav`
   background-color: #2A3942;
 }
 
+.liadmin{
+  background-color:	#00008B;
+}
 .li2{
-  background-color:#6495ED;
+  background-color:#191970;
 }
 
 .li3{

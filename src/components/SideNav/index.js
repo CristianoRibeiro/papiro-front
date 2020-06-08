@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Collapse,NavbarToggler} from 'reactstrap';
 import {SideMenu} from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNewspaper,faAward,faPlusCircle,faTrophy,faUsers,faAddressCard,faUsersCog,faStar,faScroll} from '@fortawesome/free-solid-svg-icons'
+import { faNewspaper,faAward,faPlusCircle,faTrophy,faUsers,faAddressCard,faUsersCog,faStar,faScroll,faChalkboardTeacher,faChartBar} from '@fortawesome/free-solid-svg-icons'
 
 
 import {Link}  from 'react-router-dom';
@@ -38,28 +38,35 @@ return (
       <Link to="/Avisos/"><li > <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
       <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
       <Link to="/Conquistas/ListarConquistas/"><li><FontAwesomeIcon icon={faStar}/> Conquistas</li></Link>
-      <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Cargos</li></Link>
-       <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAddressCard}/> Setores</li></Link>
-        <li onClick={toggle}><FontAwesomeIcon icon={faPlusCircle}/> Cadastrar</li>
+      <li className='liadmin' onClick={toggle}><FontAwesomeIcon icon={faChalkboardTeacher}/> Gestão</li>
         <Collapse isOpen={isOpen}>
-        
+  
+        {/* <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAward}/> Cargos</li></Link>
+       <Link to="/Recompensas/"><li><FontAwesomeIcon icon={faAddressCard}/> Setores</li></Link>
          <Link to="/Cadastrar/Avisos/"><li className='li2'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
-        <li className='li2 'onClick={toggle2}><FontAwesomeIcon icon={faTrophy}/> Prêmios</li>
+        <li className='li2 'onClick={toggle}><FontAwesomeIcon icon={faTrophy}/> Prêmios</li> */}
+        
+   
+     
+        <Link to="/Cadastrar/Cargo/"><li className='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargos</li></Link>
+        <Link to="/Cadastrar/Setor/"><li className='li3'><FontAwesomeIcon icon={faUsersCog}/> Setores</li></Link>
+        <Link to="/Cadastrar/Setor/"><li className='li3'><FontAwesomeIcon icon={faChartBar}/> Relatórios</li></Link>
+        <li className='li2'onClick={toggle2}><FontAwesomeIcon icon={faPlusCircle}/> Cadastrar</li>
+
+        </Collapse>
+       
         <Collapse isOpen={isOpen && isOpen2}>
+        <Link to="/Avisos/"><li className='li3'> <FontAwesomeIcon icon={faNewspaper} /> Avisos</li></Link>
         <Link to="/Cadastrar/Conquistas/"><li className='li3'><FontAwesomeIcon icon={faStar}/> Conquistas</li></Link>
         <Link to="/Cadastrar/Recompensas/"> <li className='li3'><FontAwesomeIcon icon={faAward}/> Recompensas</li></Link>
         </Collapse>
+        
 
-        <li className='li2'onClick={toggle3}><FontAwesomeIcon icon={faUsers}/> Equipes</li>
+        {/* <li className='li2'onClick={toggle3}><FontAwesomeIcon icon={faUsers}/> Equipes</li>
 
         <Collapse isOpen={isOpen && isOpen3}>
-     
-        <Link to="/Cadastrar/Cargo/"><li className='li3' ><FontAwesomeIcon icon={faAddressCard}/> Cargo</li></Link>
-        <Link to="/Cadastrar/Setor/"><li className='li3'><FontAwesomeIcon icon={faUsersCog}/> Setor</li></Link>
-     
         </Collapse>
-        </Collapse>
-            
+             */}
       </ul>
     </div>
   </div>
