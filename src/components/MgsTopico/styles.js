@@ -11,6 +11,14 @@ export const Container = styled.div`
       content: " ";
       display: table;
     }
+
+    .form {
+      display: block;
+      margin-top: 0em;
+      .topwrap{
+        display: flex;
+      }
+    }
 `;
 export const ContentLeft = styled.div`
   float: left!important;
@@ -199,13 +207,7 @@ export const Postinfobot = styled.div`
   }
 `;
 
-export const Form = styled.form`
-    display: block;
-    margin-top: 0em;
-    .topwrap{
-      display: flex;
-    }
-`;
+
 
 export const PosttextComent = styled.div`
     display: block;
@@ -220,21 +222,35 @@ export const PosttextComent = styled.div`
 
     .postreply {
       font-size: 12px;
-      color: #bdc3c7;
+      color: #000;
+      font-weight: bold;
       display: block;
       font-family: 'Open Sans Regular', sans-serif;
-  }
+    }
   .textwraper {
     background-color: #f1f1f1;
     border-radius: 2px;
     padding: 18px;
-    textarea {
+    textarea, input {
     border: none;
     box-shadow: none;
     background-color: #f1f1f1;
     /* width: 610px; */
     width: 100%;
-}
+
+    }
+
+    span {
+        margin-top: 0px;
+        font-size: 10px;
+        color: red;
+        font-weight: bold;
+      }
+
+    .error {
+      color: #f00;
+      font-style: italic;
+    }
 
 }
 

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
 import Post from  './../../pages/Post';
 
@@ -12,35 +12,32 @@ import AvisosPartial from './../../components/AvisosPartial';
 import RecompensasPartial from './../../components/RecompensasPartial';
 import TopTopics from  './../../components/TopTopics';
 
-
+import './styles.css';
 import Api from '../../services/api';
 
-class Main extends Component {
-  state = {
-    mensagens : []
-  }
+function Main(props) {
+  const [mensagens, setMensagens] = useState([]);
+
+  useEffect(() => {
+    getMensagensPostadas();
+  }, [mensagens]);
 
 
-  componentDidMount() {
-    this.getMensagensPostadas();
-  }
 
-  getMensagensPostadas  = async () => {
+  async function getMensagensPostadas() {
 
-    const response = await Api.get('Mensagem/ObterTop3Mensagens');
+    const response = await Api.get('/Mensagem');
+    console.log(response);
+    setMensagens(
+      response.data
+    );
 
-    this.setState({
-      mensagens: response.data
-    })
+  };
 
-  }
 
-render(){
-
-  const {mensagens} = this.state;
   return(
     <>
-    <Header  {...this.props} />
+    <Header  {...props} />
 
     <Container>
     <Row>
@@ -50,6 +47,30 @@ render(){
 
       <Col xs="6">
         <MgsTopico />
+
+        <Pagination className="paginationforum" aria-label="Page navigation example">
+          <PaginationItem>
+              <PaginationLink first href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink previous href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">
+                1
+              </PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink next href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink last href="#" />
+            </PaginationItem>
+          </Pagination>
+
+
+
         <Post mensagem={mensagens} />
       </Col>
       <Col xs="3">
@@ -68,7 +89,7 @@ render(){
     </>
     );
 
-};
+
 
 }
 
