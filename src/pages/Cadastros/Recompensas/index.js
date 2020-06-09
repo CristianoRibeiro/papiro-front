@@ -1,21 +1,22 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col,Jumbotron, } from 'reactstrap';
 
-function Recompensas() {
+
+
+function CadastroRecompensas() {
   return(
-    <Container>
-      <Row>
-        <Col xs="4">
-        </Col>
-        <Col xs="5">
-        <h1>Teste</h1>
-        </Col>
-        <Col xs="3">
-        
-        </Col>
-      </Row>
-    </Container>
+
+<Col xs="12" >
+<Row>
+<Container>
+<h1>Agora vai</h1>
+  </Container>
+
+
+</Row>
+</Col>
   );
 }
 
-export default Recompensas;
+export default CadastroRecompensas;
+

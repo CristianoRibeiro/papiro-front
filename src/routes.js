@@ -27,7 +27,7 @@ export default function Routes(){
         <Route path="/Avisos/ListarAvisos/" exact component={Avisos} />
         <Route path="/Avisos/Cadastrar" exact component={CadastroAvisos} />
 
-        <Route path="/Recompensas/ListarRecompensa/" exact component={Recompensas} />
+        <Route path="/Recompensas/ListarRecompensas/" exact component={Recompensas} />
        <Route path="/Recompensas/Cadastrar" exact component={CadastroRecompensas} />
 
         
