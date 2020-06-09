@@ -6,7 +6,6 @@ import GlobalStyle from './styles/global'
 function App() {
   return (
     <>
-    <Header />
     <BrowserRouter>
       <Routes />
       <GlobalStyle />

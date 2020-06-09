@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -8,9 +10,21 @@ import {
 } from 'reactstrap';
 import { Content } from './styles';
 
-function Header() {
+import { logout } from "./../../services/auth";
+
+
+function Header(props) {
+  let history = useHistory();
+
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+   const handleLogout = (e) => {
+    e.preventDefault();
+
+    logout()
+    props.history.push('/login');
+  };
 
   return (
     <div>
@@ -20,7 +34,7 @@ function Header() {
 
         <NavbarBrand href="/">PAPIRO</NavbarBrand>
         <div>
-          <a href="#">
+          <a href="#" onClick={handleLogout}>
             Sair &nbsp;&nbsp;&nbsp;
             <FontAwesomeIcon icon={faSignOutAlt} href='#'  />
           </a>

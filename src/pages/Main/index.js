@@ -4,6 +4,8 @@ import { Container, Row, Col } from 'reactstrap';
 
 import Post from  './../../pages/Post';
 
+import Header from './../../components/Header';
+
 import MgsTopico from './../../components/MgsTopico';
 import UserPane from './../../components/UserPane';
 import AvisosPartial from './../../components/AvisosPartial';
@@ -37,6 +39,8 @@ render(){
 
   const {mensagens} = this.state;
   return(
+    <>
+    <Header  {...this.props} />
 
     <Container>
     <Row>
@@ -61,8 +65,8 @@ render(){
       </Row>
     </Container>
 
-
-      );
+    </>
+    );
 
 };
 
