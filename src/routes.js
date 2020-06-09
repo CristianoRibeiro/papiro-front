@@ -18,6 +18,11 @@ import Setores from './pages/Gestão/Setores'
 
 import Relatorios from './pages/Gestão/Relatorios'
 
+
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
+
 export default function Routes(){
   return (
 
@@ -30,7 +35,7 @@ export default function Routes(){
         <Route path="/Recompensas/ListarRecompensa/" exact component={Recompensas} />
        <Route path="/Recompensas/Cadastrar" exact component={CadastroRecompensas} />
 
-        
+
         <Route path= "/Conquistas/ListarConquistas/" exact component={ListarConquistas} />
         <Route path="Conquistas/Cadastrar/" exact component={CadastroConquistas} />
 
@@ -39,6 +44,8 @@ export default function Routes(){
 
         <Route path="Relatorios/" exact component={Relatorios} />
 
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
       </Switch>
 
   )

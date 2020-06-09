@@ -12,7 +12,7 @@ function Recompensas() {
         <h1>Teste</h1>
         </Col>
         <Col xs="3">
-        
+
         </Col>
       </Row>
     </Container>
