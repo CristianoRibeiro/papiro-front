@@ -1,32 +1,53 @@
 import React,{Component} from 'react';
 import {
-  Jumbotron,Table
+  Jumbotron,Table,Button
 } from 'reactstrap';
+import Api from '../../../services/api'
+import { faCrown,faGift,faLevelUpAlt} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class ListarRecompensas extends Component{
+  state={
+    ListaRecompensas:[]
+};
 
+async componentDidMount(){
+
+  const response=await Api.get('/Recompensa/ListarRecompensas');
+
+  this.setState({
+
+  ListaRecompensas:response.data
+
+  })
+
+  };
 
     render(){
-      
+      const{ ListaRecompensas}=this.state;
      return(
        <>
       <h2> Recompensas Ativas </h2>
         <Jumbotron>
-        <Table striped>
+        <Table striped bordered>
       <thead>
         <tr>
-          <th>Prêmio</th>
-          <th>Pontos Necessários </th>
-
+          <th><center><FontAwesomeIcon icon={faGift}/>  Prêmio</center></th>
+          <th><center><FontAwesomeIcon icon={faLevelUpAlt }/> Pontos Necessários </center></th>
+          
+     
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Jacob</td>
+          {ListaRecompensas.map(ListaRecompensas => (
+              <tr key={ListaRecompensas.IdRecompensa}>
+              <td className="Center"> {ListaRecompensas.DsRecompensa}</td>  
+               <td> <center> {ListaRecompensas.ValorPontuacao}  pts </center>  </td>  
+               <center><Button color='info'><FontAwesomeIcon icon={faCrown}/>  Reinvidicar </Button></center>
+            </tr>
+            ))}
   
-        </tr>
-        
       </tbody>
     </Table>
         </Jumbotron>
