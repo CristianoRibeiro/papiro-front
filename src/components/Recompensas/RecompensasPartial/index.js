@@ -3,7 +3,7 @@ import React,{Component}from 'react';
 
 import {SidebarBlock}  from './styles';
 
-import Api from '../../services/api';
+import Api from '../../../services/api';
 
 class RecompensasPartial extends Component{
   state={

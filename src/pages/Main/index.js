@@ -7,7 +7,7 @@ import Post from  './../../pages/Post';
 import MgsTopico from './../../components/MgsTopico';
 import UserPane from './../../components/UserPane';
 import AvisosPartial from './../../components/AvisosPartial';
-import RecompensasPartial from './../../components/RecompensasPartial';
+import RecompensasPartial from './../../components/Recompensas/RecompensasPartial';
 import TopTopics from  './../../components/TopTopics';
 
 
