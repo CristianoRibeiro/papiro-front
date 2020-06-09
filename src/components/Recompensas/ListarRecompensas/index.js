@@ -28,8 +28,8 @@ async componentDidMount(){
       const{ ListaRecompensas}=this.state;
      return(
        <>
-      <h2> Recompensas Ativas </h2>
         <Jumbotron>
+        <h2> Recompensas Ativas <hr></hr></h2>
         <Table striped bordered>
       <thead>
         <tr>
