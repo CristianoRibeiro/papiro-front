@@ -40,6 +40,7 @@ render(){
 <Container>
 <Jumbotron>
 <h2> Avisos </h2>
+<hr></hr>
 <Row>
 {avisos.map(avisos => (<Pane key={avisos.IdAvisos}>
 <Card>
