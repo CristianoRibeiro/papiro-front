@@ -26,6 +26,7 @@ function SideNav(){
   const [isOpen3, setIsOpen3] = useState(false);
   
   const toggle3= () => setIsOpen3(!isOpen3);
+
 return (
 
 <SideMenu navbar='true'>

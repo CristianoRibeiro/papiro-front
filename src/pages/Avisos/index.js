@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {  Row, Col,Jumbotron,Button,Card,Container} from 'reactstrap';
-import {  parseISO,format} from 'date-fns';
+import Header from '../.../../../components/Header';
 import Api from '../../services/api';
 
 
@@ -28,6 +28,9 @@ avisos:response.data
 render(){
     const{ avisos}=this.state;
     return(
+<>
+
+<Header></Header>
 <Col xs="12" >
 <Col xs="2" >
 <Container>
@@ -64,7 +67,9 @@ render(){
   </Container>
 
 </Col>
+
 </Col>
+</>
   );
   
     }

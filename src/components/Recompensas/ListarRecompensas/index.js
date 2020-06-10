@@ -4,13 +4,16 @@ import {
 } from 'reactstrap';
 import Api from '../../../services/api'
 import { faCrown,faGift,faLevelUpAlt} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome' 
 
 
 class ListarRecompensas extends Component{
   state={
-    ListaRecompensas:[]
+    ListaRecompensas:[],
+    TipoUsuario:0
 };
+async Reinvidicar(id, up){
+  console.log(up);}
 
 async componentDidMount(){
 
@@ -18,14 +21,18 @@ async componentDidMount(){
 
   this.setState({
 
-  ListaRecompensas:response.data
-
+  ListaRecompensas:response.data,
+  TipoUsuario:localStorage.getItem("@papiro-CdTipoUsuario"),
+  PontuacaoUsuario:localStorage.getItem("@papiro-Pontuacao")
+  
   })
+  
 
   };
 
     render(){
-      const{ ListaRecompensas}=this.state;
+      const{ ListaRecompensas,TipoUsuario,PontuacaoUsuario}=this.state;
+
      return(
        <>
         <Jumbotron>
@@ -35,7 +42,6 @@ async componentDidMount(){
         <tr>
           <th><center><FontAwesomeIcon icon={faGift}/>  Prêmio</center></th>
           <th><center><FontAwesomeIcon icon={faLevelUpAlt }/> Pontos Necessários </center></th>
-          
      
         </tr>
       </thead>
@@ -44,7 +50,8 @@ async componentDidMount(){
               <tr key={ListaRecompensas.IdRecompensa}>
               <td className="Center"> {ListaRecompensas.DsRecompensa}</td>  
                <td> <center> {ListaRecompensas.ValorPontuacao}  pts </center>  </td>  
-               <center><Button color='info'><FontAwesomeIcon icon={faCrown}/>  Reinvidicar </Button></center>
+               
+           {TipoUsuario>4,ListaRecompensas.ValorPontuacao<=PontuacaoUsuario? <center><Button onClick={this.Reinvidicar} color='info' id='bt'><FontAwesomeIcon icon={faCrown}/>  Reinvidicar </Button></center>:""} 
             </tr>
             ))}
   

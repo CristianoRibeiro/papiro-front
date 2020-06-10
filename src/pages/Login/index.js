@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import {Form, Input} from '@rocketseat/unform';
 import * as Yup from 'yup';
 import api from './../../services/api';
-import { login, IdUsuario, nomeUsuario, tipoUsuario, pessoa } from "./../../services/auth";
+import { login, IdUsuario, nomeUsuario, tipoUsuario, pessoa,pontuacaoUsuario } from "./../../services/auth";
 
 import { Container } from "./styles";
 
@@ -28,6 +28,7 @@ function Login(props) {
       nomeUsuario(response.data.usuario.username);
       tipoUsuario(response.data.usuario.CdTipoUsuario);
       pessoa(response.data.usuario.CdPessoa);
+      pontuacaoUsuario(response.data.usuario.Pontuacao);
 
       props.history.push("/");
 

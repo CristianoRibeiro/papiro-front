@@ -39,7 +39,7 @@ function MgsTopico() {
     try {
 
 
-      let response = await api.post('/Mensagem', {
+      let response = await api.put('/Mensagem/  ', {
         TituloMensagem: data.titulo,
         DsMensagem: data.mensagem,
         CdUsuario: getIdUsuario()

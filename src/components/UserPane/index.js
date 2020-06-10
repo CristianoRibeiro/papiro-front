@@ -9,18 +9,18 @@ import avatar from './../../images/user.png';
 
 class UserPane extends Component{
     state={
-        user:"",
-        pontuacao:""
+        Usuario:"",
+        Pontuacao:""
     };
 
     async componentDidMount(){
 
-        const Id='1';
-        const response=await Api.get("User/Username/Id");
-
+       
         this.setState({
 
-        user:response.data
+        Usuario:localStorage.getItem("@papiro-nomeUsuario"),
+        Pontuacao:localStorage.getItem("@papiro-Pontuacao"),
+        TipoUsuario:localStorage.getItem("@papiro-CdTipoUsuario"),
 
 
         })
@@ -30,7 +30,7 @@ class UserPane extends Component{
 
 
 render(){
-    const{ user}=this.state;
+    const{ Usuario,Pontuacao}=this.state;
 return (
 
     <Pane>
@@ -44,7 +44,7 @@ return (
       <Col xs="8">
       <div className="userName"> 
 
-      <h3>{user}    Pontuação:45 </h3>
+      <h3>{Usuario} Pontuacao: {Pontuacao} </h3>
 
         </div>
       </Col>

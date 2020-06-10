@@ -2,11 +2,15 @@ import React from 'react';
 import { Container, Row, Col,Jumbotron, } from 'reactstrap';
 import ListarRecompensas from '../../components/Recompensas/ListarRecompensas';
 import RecompensaContempladoPartial from '../../components/Recompensas/RecompensaUltimoContemplado';
+import Header from '../.../../../components/Header';
+
 
 function Recompensas() {
   
   return(
 
+<>
+<Header></Header>
 <Col xs="12" >
 <Row>
 
@@ -24,7 +28,7 @@ function Recompensas() {
 </Row>
 
 </Col>
-
+</>
   );
 }
 
