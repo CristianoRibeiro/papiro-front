@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { Container, Row, Col } from 'reactstrap';
-
+import Pagination from './../../components/Pagination';
 import Post from  './../../pages/Post';
+
+import Header from './../../components/Header';
 
 import MgsTopico from './../../components/MgsTopico';
 import UserPane from './../../components/UserPane';
@@ -10,33 +12,51 @@ import AvisosPartial from './../../components/AvisosPartial';
 import RecompensasPartial from './../../components/Recompensas/RecompensasPartial';
 import TopTopics from  './../../components/TopTopics';
 
-
+import './styles.css';
 import Api from '../../services/api';
 
-class Main extends Component {
-  state = {
-    mensagens : []
-  }
+function Main(props) {
+  const [verify, setVerify] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(5);
+
+  useEffect(() => {
+    if(currentPage){
+      loadData();
+    }else{
+      loadData();
+    }
+
+  }, [currentPage]);
 
 
-  componentDidMount() {
-    this.getMensagensPostadas();
-  }
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  getMensagensPostadas  = async () => {
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
-    const response = await Api.get('Mensagem/ObterTop3Mensagens');
+  async function loadData() {
 
-    this.setState({
-      mensagens: response.data
-    })
+    try {
+      const response = await Api.get(`/Mensagem`);
 
-  }
+      setPosts(response.data);
 
-render(){
 
-  const {mensagens} = this.state;
+    } catch (error) {
+      console.log(error);
+    }
+
+  };
+
+
   return(
+    <>
+    <Header  {...props} />
 
     <Container>
     <Row>
@@ -46,7 +66,16 @@ render(){
 
       <Col xs="6">
         <MgsTopico />
-        <Post mensagem={mensagens} />
+
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+        />
+
+
+
+        <Post mensagem={currentPosts} />
       </Col>
       <Col xs="3">
           <AvisosPartial/>
@@ -61,10 +90,10 @@ render(){
       </Row>
     </Container>
 
+    </>
+    );
 
-      );
 
-};
 
 }
 

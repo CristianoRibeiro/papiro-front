@@ -1,0 +1,30 @@
+.prevnext {
+  font-size: 26px;
+  color: #cfd5d7;
+  margin-top: 11px;
+  display: block;
+}
+.paginationforum {
+  margin: 19px auto;
+  padding: 0;
+}
+.paginationforum li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 20px;
+}
+.prevnext.last {
+  margin-left: 20px;
+}
+.paginationforum li a {
+  min-width: 24px;
+  height: 24px;
+  font-size: 14px;
+  font-family: 'Open Sans Semibold', sans-serif;
+  color: #ffffff;
+  background-color: #cfd5d7;
+  border-radius: 2px;
+  display: block;
+  padding: 0 8px;
+  line-height: 24px;
+}

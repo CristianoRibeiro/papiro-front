@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { isAuthenticated } from "./services/auth";
 
 import Main from './pages/Main';
 
@@ -18,28 +19,57 @@ import Setores from './pages/Gestão/Setores'
 
 import Relatorios from './pages/Gestão/Relatorios'
 
-export default function Routes(){
+
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      isAuthenticated() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
+      )
+    }
+  />
+);
+
+
+const Routes = () => {
+
+
+
   return (
 
       <Switch>
-        <Route path="/" exact component={Main} />
+        <PrivateRoute path="/" exact component={Main} />
+        {/* <PrivateRoute path="/:page" exact component={Main} /> */}
 
-        <Route path="/Avisos/ListarAvisos/" exact component={Avisos} />
-        <Route path="/Avisos/Cadastrar" exact component={CadastroAvisos} />
+        <PrivateRoute path="/Avisos/ListarAvisos/" exact component={Avisos} />
+        <PrivateRoute path="/Avisos/Cadastrar" exact component={CadastroAvisos} />
+
+        <PrivateRoute path="/Recompensas/ListarRecompensa/" exact component={Recompensas} />
+       <PrivateRoute path="/Recompensas/Cadastrar" exact component={CadastroRecompensas} />
+
 
         <Route path="/Recompensas/ListarRecompensas/" exact component={Recompensas} />
        <Route path="/Recompensas/Cadastrar" exact component={CadastroRecompensas} />
 
-        
-        <Route path= "/Conquistas/ListarConquistas/" exact component={ListarConquistas} />
-        <Route path="Conquistas/Cadastrar/" exact component={CadastroConquistas} />
+        <PrivateRoute path="Cargos/" exact component={Cargos} />
+        <PrivateRoute path="Setores/" exact component={Setores} />
 
-        <Route path="Cargos/" exact component={Cargos} />
-        <Route path="Setores/" exact component={Setores} />
+        <PrivateRoute path="Relatorios/" exact component={Relatorios} />
 
-        <Route path="Relatorios/" exact component={Relatorios} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="*" component={() => <h1>Page not found</h1>} />
+
 
       </Switch>
 
   )
 }
+
+export default Routes;
