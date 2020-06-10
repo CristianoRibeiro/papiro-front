@@ -54,8 +54,8 @@ const Routes = () => {
        <PrivateRoute path="/Recompensas/Cadastrar" exact component={CadastroRecompensas} />
 
 
-        <PrivateRoute path= "/Conquistas/ListarConquistas/" exact component={ListarConquistas} />
-        <PrivateRoute path="Conquistas/Cadastrar/" exact component={CadastroConquistas} />
+        <Route path="/Recompensas/ListarRecompensas/" exact component={Recompensas} />
+       <Route path="/Recompensas/Cadastrar" exact component={CadastroRecompensas} />
 
         <PrivateRoute path="Cargos/" exact component={Cargos} />
         <PrivateRoute path="Setores/" exact component={Setores} />

@@ -1,21 +1,30 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import Api from '../../services/api';
+import { Container, Row, Col,Jumbotron, } from 'reactstrap';
+import ListarRecompensas from '../../components/Recompensas/ListarRecompensas';
+import RecompensaContempladoPartial from '../../components/Recompensas/RecompensaUltimoContemplado';
 
 function Recompensas() {
+  
   return(
-    <Container>
-      <Row>
-        <Col xs="4">
-        </Col>
-        <Col xs="5">
-        <h1>Teste</h1>
-        </Col>
-        <Col xs="3">
 
-        </Col>
-      </Row>
-    </Container>
+<Col xs="12" >
+<Row>
+
+<Col xs="7" >
+<Container>
+<ListarRecompensas></ListarRecompensas>
+  </Container>
+</Col>
+
+<Col xs='5'>
+<Container>
+  <RecompensaContempladoPartial></RecompensaContempladoPartial>
+</Container>
+</Col>
+</Row>
+
+</Col>
+
   );
 }
 

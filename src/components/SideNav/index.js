@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Collapse,NavbarToggler} from 'reactstrap';
 import {SideMenu} from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNewspaper,faAward,faPlusCircle,faTrophy,faUsers,faAddressCard,faUsersCog,faStar,faScroll,faChalkboardTeacher,faChartBar} from '@fortawesome/free-solid-svg-icons'
+import { faNewspaper,faAward,faPlusCircle,faAddressCard,faUsersCog,faStar,faScroll,faChalkboardTeacher,faChartBar} from '@fortawesome/free-solid-svg-icons'
 
 
 import {Link}  from 'react-router-dom';
 
 
 function SideNav(){
-
+  
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleNavbar = () => {if (!collapsed){setIsOpen(false);setIsOpen2(false);setIsOpen3(false)};  setCollapsed(!collapsed)}

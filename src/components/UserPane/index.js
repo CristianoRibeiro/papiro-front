@@ -42,7 +42,7 @@ return (
       <img src={avatar} alt="" />
       </Col>
       <Col xs="8">
-      <div className="userName">
+      <div className="userName"> 
 
       <h3>{user}    Pontuação:45 </h3>
 

@@ -1,7 +1,12 @@
 import React,{Component} from 'react';
-import { Container, Row, Col,Jumbotron} from 'reactstrap';
-import {Msg} from './style';
+import {  Row, Col,Jumbotron,Button,Card,Container} from 'reactstrap';
+import {  parseISO,format} from 'date-fns';
 import Api from '../../services/api';
+
+
+import {
+  Pane
+} from './style';
 
 class Avisos extends Component{
 state={
@@ -23,38 +28,46 @@ avisos:response.data
 render(){
     const{ avisos}=this.state;
     return(
-    <Container>
-      <Row>
-        <Col xs="4">
-            
-        </Col>
-     
-        <Col xs="5" background-color='red'>
-    
-        <Msg>
-        <card>
-        
+<Col xs="12" >
+<Col xs="2" >
+<Container>
+  </Container>
+</Col>
+<Col xs="8" >
 
-    {avisos.map(avisos => (
-    <li key={avisos.IdAviso}>
-          {avisos.Aviso}
-     
-  </li>
-))}
 
-</card>
-</Msg>
-        </Col>
-        <Col xs="3">
-       
-        </Col>
-      </Row>
-    </Container>
 
-)
+<Container>
+<Jumbotron>
+<h2> Avisos </h2>
+<hr></hr>
+<Row>
+{avisos.map(avisos => (<Pane key={avisos.IdAvisos}>
+<Card>
+<h3>{avisos.TituloAviso}</h3>
+<Card className='cardinterno'><p>{avisos.Aviso}</p></Card>
+<label>Data de Cadastro: {avisos.createdAt}
+</label>
+</Card>
+<br></br>
+<br></br>
+</Pane>     
+    ))}   
 
-}
 
-}
+<Col xs="2" >
+<Container>
+  </Container>
+</Col>
+</Row>
+</Jumbotron>
+  </Container>
 
-export default Avisos;
+</Col>
+</Col>
+  );
+  
+    }
+  }
+
+export default Avisos
