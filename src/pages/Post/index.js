@@ -62,8 +62,8 @@ class Post extends Component {
 
     try {
 
-      let response = await api.post(`/Mensagem/Comentarios/?id=${id}`, {
-        // Up: data.mensagem,
+      let response = await api.put(`/Mensagem/Up/?id=${id}`, {
+        Up: up + 1,
         // CdMsgPai: props.post_id,
         // CdUsuario: getIdUsuario()
       });
