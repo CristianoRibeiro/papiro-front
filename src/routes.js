@@ -45,7 +45,7 @@ const Routes = () => {
 
       <Switch>
         <PrivateRoute path="/" exact component={Main} />
-        <PrivateRoute path="/:page?" component={Main} />
+        {/* <PrivateRoute path="/:page" exact component={Main} /> */}
 
         <PrivateRoute path="/Avisos/ListarAvisos/" exact component={Avisos} />
         <PrivateRoute path="/Avisos/Cadastrar" exact component={CadastroAvisos} />
