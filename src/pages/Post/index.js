@@ -4,7 +4,7 @@ import {
   Button,
 } from 'reactstrap';
 
-
+import { getIdUsuario } from './../../services/auth';
 import Comentar from './../../components/Comentar';
 
 import Api from './../../services/api';
@@ -49,13 +49,32 @@ class Post extends Component {
     toogle: 0,
   }
 
-  handleClick(id) {
+  async handleClick(id) {
     this.setState({toogle:id});
     console.log(id);
+
+
   }
 
 
+  async handleFavorit(id, up){
+    console.log(up);
 
+    try {
+
+      let response = await api.post(`/Mensagem/Comentarios/?id=${id}`, {
+        // Up: data.mensagem,
+        // CdMsgPai: props.post_id,
+        // CdUsuario: getIdUsuario()
+      });
+
+
+    } catch (error) {
+
+      console.log(error);
+
+    }
+  }
 
 
   render () {
@@ -103,7 +122,7 @@ class Post extends Component {
           </Postinfo>
 
           <Opcoes>
-            <Button className="up">
+            <Button className="up" onClick={() => this.handleFavorit(mensagem.IdMensagem, mensagem.Up)}>
               <FontAwesomeIcon size="sm" icon={faLightbulb} />
             </Button>
 

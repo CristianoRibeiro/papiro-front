@@ -78,7 +78,8 @@ function Comentar(props) {
     }
   }
 
-  console.log(comentarios);
+
+
 
 
   return(
@@ -110,7 +111,7 @@ function Comentar(props) {
       {comentarios &&
 
         comentarios.map(comentario => (
-            <Col xs="12">
+            <Col xs="12" key={comentario.IdMensagem}>
             <Row className="justify-content-center">
               <Col xs="2">
                 <Userinfo>
@@ -128,12 +129,12 @@ function Comentar(props) {
                           <p>{comentario.DsMensagem}</p>
                     </div>
                 </TextComentarios>
-                <Opcoes>
+                {/* <Opcoes>
                   <Button className="up my-2">
                     <FontAwesomeIcon size="sm" icon={faLightbulb} />
                   </Button>
                   <Button className="comentario">Comentar</Button>
-                </Opcoes>
+                </Opcoes> */}
               </Col>
             </Row>
           </Col>
