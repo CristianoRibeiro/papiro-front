@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ContainerBG = styled.div`
     background-color: #ffffff;
     border-radius: 2px;
     box-shadow: 0 1px 2px #c9cccd;
@@ -11,10 +11,18 @@ export const Container = styled.div`
       content: " ";
       display: table;
     }
+
+    .form {
+      display: block;
+      margin-top: 0em;
+      .topwrap{
+        display: flex;
+      }
+    }
 `;
 export const ContentLeft = styled.div`
   float: left!important;
-  width: 100%;
+  width: 85%;
   box-sizing: border-box;
   display: flex;
 
@@ -94,31 +102,11 @@ export const Posttext = styled.div`
 `;
 
 
-export const Opcoes = styled.div`
-    width: 100%;
-    border-top: solid 1px #f1f1f1;
-
-    .up {
-      border: 0;
-      background: none;
-      /* color: #999; */
-      svg:not(:root).svg-inline--fa {
-          overflow: visible;
-          border: 8px;
-      }
-    }
-    .comentario {
-      border: 0;
-      background: none;
-      color: #999;
-      font-size:12px;
-    }
-`;
 
 
 
 export const Postinfo = styled.div`
-    width: 15%;
+width: 15%;
     border-left: solid 1px #f1f1f1;
     display: flex;
     flex-direction: column;
@@ -219,13 +207,7 @@ export const Postinfobot = styled.div`
   }
 `;
 
-export const Form = styled.form`
-    display: block;
-    margin-top: 0em;
-    .topwrap{
-      display: flex;
-    }
-`;
+
 
 export const PosttextComent = styled.div`
     display: block;
@@ -240,27 +222,41 @@ export const PosttextComent = styled.div`
 
     .postreply {
       font-size: 12px;
-      color: #bdc3c7;
+      color: #000;
+      font-weight: bold;
       display: block;
       font-family: 'Open Sans Regular', sans-serif;
-  }
+    }
   .textwraper {
     background-color: #f1f1f1;
     border-radius: 2px;
     padding: 18px;
-    textarea {
+    textarea, input {
     border: none;
     box-shadow: none;
     background-color: #f1f1f1;
     /* width: 610px; */
     width: 100%;
-}
+
+    }
+
+    span {
+        margin-top: 0px;
+        font-size: 10px;
+        color: red;
+        font-weight: bold;
+      }
+
+    .error {
+      color: #f00;
+      font-style: italic;
+    }
 
 }
-
-
-
 
 `;
+
+
+
 
 

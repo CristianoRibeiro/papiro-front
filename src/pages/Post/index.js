@@ -47,38 +47,42 @@ class Post extends Component {
 
   state = {
     toogle: 0,
+    cor: '#999',
+    up:0
   }
 
   async handleClick(id) {
-    this.setState({toogle:id});
+    this.setState({toogle:this.state.toogle === id ? 0 : id});
     console.log(id);
-
-
   }
 
 
-  async handleFavorit(id, up){
-    console.log(up);
+  async handleFavorit(id){
 
-    try {
+    this.setState({
+      cor: this.state.cor === '#999'? '#FF7700': '#999',
+      up: this.state.up === id ? 0 : id
+    });
 
-      let response = await api.put(`/Mensagem/Up/?id=${id}`, {
-        Up: up + 1,
-        // CdMsgPai: props.post_id,
-        // CdUsuario: getIdUsuario()
-      });
+    // try {
+    //   const id_user = parseInt(getIdUsuario());
 
+    //   let response = await api.post("/UPUsuario", {
+    //     CdUsuario: id_user,
+    //     CdMensagem: id,
+    //   });
+    //   console.log(response)
 
-    } catch (error) {
+    // } catch (error) {
 
-      console.log(error);
+    //   console.log(error);
 
-    }
+    // }
   }
 
 
   render () {
-      const { toogle } = this.state;
+      const { toogle, up } = this.state;
       const { mensagem } = this.props;
 
       return (
@@ -109,7 +113,7 @@ class Post extends Component {
 
 
 
-          <Postinfo>
+          {/* <Postinfo>
               <Comments>
                   <Commentbg>
                       560
@@ -119,14 +123,21 @@ class Post extends Component {
               </Comments>
               <Views><FontAwesomeIcon size="sm" icon={faEye} /> 1,568</Views>
               <Time><FontAwesomeIcon size="sm" icon={faClock} />  24 min</Time>
-          </Postinfo>
+          </Postinfo> */}
 
           <Opcoes>
-            <Button className="up" onClick={() => this.handleFavorit(mensagem.IdMensagem, mensagem.Up)}>
+            {up === mensagem.IdMensagem ? (
+              <Button  style={{color: '#FF7700' }} className="up" onClick={() => this.handleFavorit(mensagem.IdMensagem)}>
+                <FontAwesomeIcon size="sm" icon={faLightbulb} />
+              </Button>
+            ): (
+              <Button  style={{color: '#999' }} className="up" onClick={() => this.handleFavorit(mensagem.IdMensagem)}>
               <FontAwesomeIcon size="sm" icon={faLightbulb} />
             </Button>
+            )}
 
-            <Button className="comentario" onClick={() => this.handleClick(mensagem.IdMensagem)}>Comentarios</Button>
+
+            <Button  className="comentario" onClick={() => this.handleClick(mensagem.IdMensagem)}>Comentarios</Button>
           </Opcoes>
 
 
