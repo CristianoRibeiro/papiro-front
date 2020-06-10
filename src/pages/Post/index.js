@@ -4,6 +4,7 @@ import {
   Button,
 } from 'reactstrap';
 
+
 import Comentar from './../../components/Comentar';
 
 import Api from './../../services/api';
@@ -18,7 +19,6 @@ import {
   faFlag,
   faLightbulb
 } from '@fortawesome/free-solid-svg-icons';
-
 
 import {
   Container,
@@ -39,35 +39,33 @@ import {
   Opcoes
 } from './styles';
 
+import api from './../../services/api';
+
 import avatar from './../../images/user.png';
 
 class Post extends Component {
 
   state = {
-    on: false,
+    toogle: 0,
   }
 
-  toogle = () => {
-    this.setState({
-      on: !this.state.on
-    });
-  };
+  handleClick(id) {
+    this.setState({toogle:id});
+    console.log(id);
+  }
 
-   getComentario = async  () => {
-   // const comentario = await Api.
-    }
+
 
 
 
   render () {
-
+      const { toogle } = this.state;
       const { mensagem } = this.props;
+
       return (
-        <div>
+        <>
 
-
-
-        { mensagem.map(mensagem => (
+        { mensagem.map((mensagem, i) => (
 
 
         <Container key={mensagem.IdMensagem}>
@@ -93,7 +91,7 @@ class Post extends Component {
 
 
           <Postinfo>
-              <Comments  onClick={this.toogle}>
+              <Comments>
                   <Commentbg>
                       560
                       <Mark/>
@@ -105,14 +103,18 @@ class Post extends Component {
           </Postinfo>
 
           <Opcoes>
-            <Button className="up my-2">
+            <Button className="up">
               <FontAwesomeIcon size="sm" icon={faLightbulb} />
             </Button>
 
-            <Button className="comentario">Comentarios</Button>
+            <Button className="comentario" onClick={() => this.handleClick(mensagem.IdMensagem)}>Comentarios</Button>
           </Opcoes>
 
-          <Comentar />
+
+            {toogle === mensagem.IdMensagem && (
+              <Comentar post_id={mensagem.IdMensagem} />
+            )}
+
 
       </Container>
       ))}
@@ -120,7 +122,7 @@ class Post extends Component {
 
 
 
-       </div>
+       </>
 
 
     );

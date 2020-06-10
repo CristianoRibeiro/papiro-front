@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import {Form, Input} from '@rocketseat/unform';
 import * as Yup from 'yup';
 import api from './../../services/api';
-import { login, IdUsuario } from "./../../services/auth";
+import { login, IdUsuario, nomeUsuario, tipoUsuario, pessoa } from "./../../services/auth";
 
 import { Container } from "./styles";
 
 function Login(props) {
-  const [dataUser, setDataUser] = useState([]);
-  const [token, setToken] = useState('');
+
 
   const schema = Yup.object().shape({
     username: Yup.string().required('O nome usuario é obrigatório'),
@@ -25,9 +24,11 @@ function Login(props) {
       // setDataUser(usuario.data.usuario);
       // setToken(usuario.data.token);
       login(response.data.token);
-      IdUsuario(response.data.usuario.IdUsuario)
-      // localStorage.setItem('Usuario', `${token}`);
-      // localStorage.setItem('Token', `${usuario}`);
+      IdUsuario(response.data.usuario.IdUsuario);
+      nomeUsuario(response.data.usuario.username);
+      tipoUsuario(response.data.usuario.CdTipoUsuario);
+      pessoa(response.data.usuario.CdPessoa);
+
       props.history.push("/");
 
       console.log(response);
@@ -60,4 +61,4 @@ function Login(props) {
 
 }
 
-export default Login;
+export default withRouter(Login);

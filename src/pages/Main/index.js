@@ -16,14 +16,19 @@ import './styles.css';
 import Api from '../../services/api';
 
 function Main(props) {
-
+  const [verify, setVerify] = useState([]);
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(5);
 
   useEffect(() => {
-    loadData();
-  }, [posts]);
+    if(currentPage){
+      loadData();
+    }else{
+      loadData();
+    }
+
+  }, [currentPage]);
 
 
   // Get current posts
@@ -38,7 +43,9 @@ function Main(props) {
 
     try {
       const response = await Api.get(`/Mensagem`);
+
       setPosts(response.data);
+
 
     } catch (error) {
       console.log(error);
