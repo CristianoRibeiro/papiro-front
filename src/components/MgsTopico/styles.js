@@ -254,9 +254,9 @@ export const PosttextComent = styled.div`
 
 }
 
-
-
-
 `;
+
+
+
 
 

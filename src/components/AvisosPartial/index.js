@@ -30,9 +30,9 @@ class AvisosPartial extends Component{
       return(
       <SidebarBlock>
         <h3> Avisos</h3>
-        <div class="divline"></div>
+        <div className="divline"></div>
 
-        <div class="blocktxt">
+        <div className="blocktxt">
           <ul>
           {avisos.map(avisos => (
               <li key={avisos.IdAviso}>

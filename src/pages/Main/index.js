@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
-import { Container, Row, Col, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-
+import { Container, Row, Col } from 'reactstrap';
+import Pagination from './../../components/Pagination';
 import Post from  './../../pages/Post';
 
 import Header from './../../components/Header';
@@ -16,21 +16,33 @@ import './styles.css';
 import Api from '../../services/api';
 
 function Main(props) {
-  const [mensagens, setMensagens] = useState([]);
+
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
 
   useEffect(() => {
-    getMensagensPostadas();
-  }, [mensagens]);
+    loadData();
+  }, [posts]);
 
 
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  async function getMensagensPostadas() {
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
-    const response = await Api.get('/Mensagem');
-    console.log(response);
-    setMensagens(
-      response.data
-    );
+  async function loadData() {
+
+    try {
+      const response = await Api.get(`/Mensagem`);
+      setPosts(response.data);
+
+    } catch (error) {
+      console.log(error);
+    }
 
   };
 
@@ -48,30 +60,15 @@ function Main(props) {
       <Col xs="6">
         <MgsTopico />
 
-        <Pagination className="paginationforum" aria-label="Page navigation example">
-          <PaginationItem>
-              <PaginationLink first href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink previous href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">
-                1
-              </PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink next href="#" />
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink last href="#" />
-            </PaginationItem>
-          </Pagination>
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+        />
 
 
 
-        <Post mensagem={mensagens} />
+        <Post mensagem={currentPosts} />
       </Col>
       <Col xs="3">
           <AvisosPartial/>

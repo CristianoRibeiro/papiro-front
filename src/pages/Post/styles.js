@@ -94,11 +94,31 @@ export const Posttext = styled.div`
 `;
 
 
+export const Opcoes = styled.div`
+    width: 100%;
+    border-top: solid 1px #f1f1f1;
+
+    .up {
+      border: 0;
+      background: none;
+      color: #999;
+      svg:not(:root).svg-inline--fa {
+          overflow: visible;
+          border: 8px;
+      }
+    }
+    .comentario {
+      border: 0;
+      background: none;
+      color: #999;
+      font-size:12px;
+    }
+`;
 
 
 
 export const Postinfo = styled.div`
-width: 15%;
+    width: 15%;
     border-left: solid 1px #f1f1f1;
     display: flex;
     flex-direction: column;

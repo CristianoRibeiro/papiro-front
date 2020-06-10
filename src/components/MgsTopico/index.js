@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
 } from 'reactstrap';
@@ -7,17 +7,8 @@ import { Form, Input ,Textarea } from '@rocketseat/unform';
 
 import {
   Container,
-  ContentLeft,
-  ContentLeftAll,
   Userinfo,
   Avatar,
-  Posttext,
-  Postinfo,
-  Comments,
-  Commentbg,
-  Mark,
-  Views,
-  Time,
   Postinfobot,
   PosttextComent,
 } from './styles';
@@ -31,7 +22,6 @@ import * as Yup from 'yup';
 import avatar from './../../images/user.png';
 
 function MgsTopico() {
-  const formRef = useRef(null);
 
   const [error, setError] = useState('');
 
@@ -45,7 +35,6 @@ function MgsTopico() {
 
 
   async function handlerSubmit(data, {setSubmitting, resetForm}){
-
 
     try {
 
@@ -67,8 +56,8 @@ function MgsTopico() {
 
   return (
       <Container>
-      <Form class="form" ref={formRef} schema={schema} onSubmit={handlerSubmit} >
-          <div class="topwrap">
+      <Form className="form" schema={schema} onSubmit={handlerSubmit} >
+          <div className="topwrap">
             <Userinfo>
                 <Avatar>
                     <img src={avatar} alt="" />
@@ -77,32 +66,32 @@ function MgsTopico() {
 
             </Userinfo>
             <PosttextComent>
-                  <div class="textwraper">
-                      {error && (<div class="error">Error ao inserir</div>)}
-                      <div class="postreply">Titulo</div>
+                  <div className="textwraper">
+                      {error && (<div className="error">Error ao inserir</div>)}
+                      <div className="postreply">Titulo</div>
                       <Input name="titulo" id="title"  placeholder="Titulo do topíco" />
-                      <div class="postreply">Postar um novo tópico</div>
+                      <div className="postreply">Postar um novo tópico</div>
                       <Textarea name="mensagem" id="reply" placeholder="Digite aqui seu tópico" />
                   </div>
               </PosttextComent>
-              <div class="clearfix"></div>
+              <div className="clearfix"></div>
           </div>
           <Postinfobot>
 
 
 
-              <div class="pull-right postreply">
-                  <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
-                  <div class="pull-left">
+              <div className="pull-right postreply">
+                  <div className="pull-left smile"><a href="#"><i className="fa fa-smile-o"></i></a></div>
+                  <div className="pull-left">
                   <Button className="ml-2 mr-4 btn-success btn-sm" type="submit" >
                       Publicar
                   </Button>
                   </div>
-                  <div class="clearfix"></div>
+                  <div className="clearfix"></div>
               </div>
 
 
-              <div class="clearfix"></div>
+              <div className="clearfix"></div>
           </Postinfobot>
       </Form>
     </Container>

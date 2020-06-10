@@ -30,9 +30,9 @@ class RecompensasPartial extends Component{
 
         <SidebarBlock>
             <h3> Recompensas</h3>
-            <div class="divline"></div>
+            <div className="divline"></div>
 
-            <div class="blocktxt">
+            <div className="blocktxt">
               <ul>
               {recompensas.map(recompensas => (
                   <li key={recompensas.IdRecompensa}>

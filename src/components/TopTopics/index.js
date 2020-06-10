@@ -27,9 +27,9 @@ class TopTopics extends Component{
 
         <SidebarBlock>
             <h3> Top Tópicos</h3>
-            <div class="divline"></div>
+            <div className="divline"></div>
 
-            <div class="blocktxt">
+            <div className="blocktxt">
               <ul>
               {topmensagens.map(topmensagens => (
                 <li key={topmensagens.IdMensagem}>
